@@ -1,5 +1,5 @@
 
-# RFM Segmentation and Super Store Sales Data Analysis using MySQL
+# Project: RFM Segmentation and Super Store Sales Data Analysis using MySQL
 
 📌 **Project Overview**
 
