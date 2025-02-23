@@ -107,6 +107,7 @@ Result:
   Get the earliest order date: 2010-01-01
 ```
 **6. Data Cleaning**
+
 After loading the data, ensure that date fields are correctly formatted.
 ```bash
   UPDATE Superstore_Sales
