@@ -151,9 +151,11 @@ Analyzing order distribution across different regions helps in identifying high-
   GROUP BY Region;
 ```
 **Result:**
+
 ![Orders by Region](Image/1.png)
 
-This query counts the number of orders in each region, providing insights into regional sales performance. Such information is valuable for regional sales strategies and resource allocation.
+
+NOTE:This query counts the number of orders in each region, providing insights into regional sales performance. Such information is valuable for regional sales strategies and resource allocation.
 
 4. Top 10 Customers by Sales
 
@@ -165,6 +167,12 @@ Recognizing the top customers contributes to personalized marketing and customer
   ORDER BY Total_Sales DESC
   LIMIT 10;
 ```
+
+**Result:**
+
+![Orders by Region](Image/2.png)
+
+
 
 ## RFM Segmentation
 
