@@ -27,7 +27,7 @@ This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for 
 - MySQL Workbench (optional, for easy query execution)
 
 - Sample Sales Dataset (CSV format for import)
-## 2️⃣ Database Setup
+2️⃣ Database Setup
 
 **1. Create the Database**
 
