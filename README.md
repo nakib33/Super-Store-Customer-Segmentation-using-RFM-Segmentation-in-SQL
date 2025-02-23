@@ -31,13 +31,13 @@ This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for 
 
 **1. Create the Database**
 
-```bash
+```sql
   CREATE DATABASE IF NOT EXISTS Superstore_Sales;
   USE Superstore_Sales;
 ```
 
 **2. Create the Superstore_Sales Table**
-```bash
+```sql
   CREATE TABLE Superstore_Sales (
     Row_ID INT PRIMARY KEY,
     Order_Priority VARCHAR(50),
@@ -72,7 +72,7 @@ This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for 
 
 Load the sales data from a CSV file into the Superstore_Sales table. Ensure the file path is correct and accessible by the MySQL server.
 
-```bash
+```sql
   LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Superstore Sales Data.csv'
   INTO TABLE Superstore_Sales
   FIELDS TERMINATED BY ',' 
@@ -91,13 +91,13 @@ Note: The DATE_ADD function adjusts Excel serial dates to MySQL DATE format.
 
 Statement: The query SELECT * FROM Superstore_Sales; retrieves all records and columns from the Superstore_Sales table, allowing for a comprehensive examination of the dataset's contents.
 
-```bash
+```sql
   SELECT * FROM Superstore_Sales;
 ```
 
 **5. Find the minimum and maximum date**
 
-```bash
+```sql
   SELECT MAX(Order_Date) FROM Superstore_Sales;
   SELECT MIN(Order_Date) FROM Superstore_Sales;
 ```
@@ -109,7 +109,7 @@ Result:
 **6. Data Cleaning**
 
 After loading the data, ensure that date fields are correctly formatted.
-```bash
+```sql
   UPDATE Superstore_Sales
   SET order_date = STR_TO_DATE(order_date, '%Y-%m-%d');
 
@@ -122,16 +122,17 @@ Exploratory Data Analysis (EDA) is a crucial step in understanding and summarizi
 
 1. Total Orders
 To determine the total number of orders in the Superstore Sales dataset, the following SQL query can be used:
-```bash
+```sql
   SELECT COUNT(*) AS Total_Orders
   FROM Superstore_Sales;
 ```
 **Result: 9426**
+
 NOTE: This query counts all records in the _Superstore_Sales_ table, providing the total number of orders processed. Understanding the volume of orders is fundamental for assessing overall business activity and growth over time.
 
 2. Product Categories
 Identifying the distinct product categories offered by the store is essential for inventory management and marketing strategies. The following SQL query retrieves all unique product categories:
-```bash
+```sql
   SELECT DISTINCT Product_Category
   FROM Superstore_Sales;
 ```
@@ -139,11 +140,12 @@ Identifying the distinct product categories offered by the store is essential fo
 - **Office Supplies**
 - **Technology**
 - **Furniture**
+
 NOTE: This query extracts unique values from the _Product_Category_ column, allowing the business to understand its product range and focus on categories that perform well.
 
 3. Orders by Region
 Analyzing order distribution across different regions helps in identifying high-performing areas and regions that may need targeted marketing efforts. The SQL query below groups orders by region:
-```bash
+```sql
   SELECT Region, COUNT(*) AS Order_Count
   FROM Superstore_Sales
   GROUP BY Region;
@@ -155,7 +157,7 @@ This query counts the number of orders in each region, providing insights into r
 4. Top 10 Customers by Sales
 
 Recognizing the top customers contributes to personalized marketing and customer retention strategies. The following query lists the top 10 customers based on total sales:
-```
+```sql
   SELECT Customer_Name, SUM(Sales) AS Total_Sales
   FROM Superstore_Sales
   GROUP BY Customer_Name
@@ -179,7 +181,7 @@ RFM (Recency, Frequency, Monetary) segmentation is a method to classify customer
 
 **1. RFM Segmentation**
 
-```bash
+```sql
   CREATE OR REPLACE VIEW RFM_SCORE_DATA AS
 
   WITH CUSTOMER_AGGREGATED_DATA AS (
@@ -216,7 +218,7 @@ NOTE: First, run the full code. This time, it will not display any output becaus
 
 **1. Define Customer Segments**
 
-```bash
+```sql
   CREATE OR REPLACE VIEW RFM_ANALYSIS AS
   SELECT 
     RFM_SCORE_DATA.*,
@@ -235,7 +237,7 @@ NOTE: First, run the full code. This time, it will not display any output becaus
 
 ### 📌 Customer Segment Analysis
 
-```bash
+```sql
   SELECT 
     Customer_Segment,
     COUNT(*) AS Number_of_Customers,
