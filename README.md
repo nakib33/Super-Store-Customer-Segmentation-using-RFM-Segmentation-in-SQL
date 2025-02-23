@@ -222,6 +222,11 @@ RFM (Recency, Frequency, Monetary) segmentation is a method to classify customer
     CONCAT_WS('', R_Score, F_Score, M_Score) AS RFM_Score_Combination
   FROM RFM_SCORE AS R;
 ```
+**Result:**
+
+![RFM](Image/3.png)
+
+
 NOTE: First, run the full code. This time, it will not display any output because it creates a table in the view section. This table does not save as an extra table; it fully depends on the main table, which is Superstore_Sales, so it does not take up extra space. Now, run this full SQL code again, but ignore the first line; start from the second line, which begins with "WITH CUSTOMER_AGGREGATED_DATA AS (".
 
 
@@ -242,6 +247,11 @@ NOTE: First, run the full code. This time, it will not display any output becaus
      END AS Customer_Segment
   FROM RFM_SCORE_DATA;
 ```
+**Result:**
+
+![RFM](Image/4.png)
+
+
 NOTE: First, run the full code. This time, it will not display any output because it creates a table in the view section. This table does not save as an extra table; it fully depends on the main table, which is Superstore_Sales, so it does not take up extra space. Now, run this full SQL code again, but ignore the first line; start from the second line, which begins with 'WITH CUSTOMER_AGGREGATED_DATA AS ('.
 
 ### 📌 Customer Segment Analysis
@@ -256,6 +266,10 @@ NOTE: First, run the full code. This time, it will not display any output becaus
   ORDER BY Number_of_Customers DESC;
 
 ```
+**Result:**
+
+![RFM](Image/5.png)
+
 ## 📈 Conclusion
 
 This project provides powerful insights into customer behavior and business performance using MySQL-based RFM segmentation. It helps businesses optimize marketing strategies, improve customer retention, and increase profitability.
