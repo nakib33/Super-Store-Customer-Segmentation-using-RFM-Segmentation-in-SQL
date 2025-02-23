@@ -27,7 +27,7 @@ This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for 
 
 ## 🚀 Getting Started
 
-1️⃣ Prerequisites
+**1️⃣ Prerequisites**
 
 - Ensure you have the following installed:
 
@@ -36,7 +36,8 @@ This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for 
 - MySQL Workbench (optional, for easy query execution)
 
 - Sample Sales Dataset (CSV format for import)
-2️⃣ Database Setup
+- 
+**2️⃣ Database Setup**
 
 **1. Create the Database**
 
@@ -77,7 +78,8 @@ This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for 
 );
 ```
 
-**3. INSERT THE ATTACH DATA THERE (PREFERABLY BULK INSERTION**
+**3️⃣ Insert Data**
+**1. INSERT THE ATTACH DATA THERE (PREFERABLY BULK INSERTION**
 
 Load the sales data from a CSV file into the Superstore_Sales table. Ensure the file path is correct and accessible by the MySQL server.
 
@@ -96,7 +98,8 @@ Load the sales data from a CSV file into the Superstore_Sales table. Ensure the 
 ```
 Note: The DATE_ADD function adjusts Excel serial dates to MySQL DATE format.
 
-**4. Loading the table: After the data is uploaded to the database system**
+**4️⃣ Environment Setup **
+**1. Loading the table: After the data is uploaded to the database system**
 
 Statement: The query SELECT * FROM Superstore_Sales; retrieves all records and columns from the Superstore_Sales table, allowing for a comprehensive examination of the dataset's contents.
 
@@ -104,7 +107,7 @@ Statement: The query SELECT * FROM Superstore_Sales; retrieves all records and c
   SELECT * FROM Superstore_Sales;
 ```
 
-**5. Find the minimum and maximum date**
+**2. Find the minimum and maximum date**
 
 ```sql
   SELECT MAX(Order_Date) FROM Superstore_Sales;
@@ -115,7 +118,7 @@ Result:
   Get the most recent order date: 2013-12-31
   Get the earliest order date: 2010-01-01
 ```
-**6. Data Cleaning**
+**3. Data Cleaning**
 
 After loading the data, ensure that date fields are correctly formatted.
 ```sql
@@ -126,7 +129,7 @@ After loading the data, ensure that date fields are correctly formatted.
   SET Ship_Date = STR_TO_DATE(Ship_Date, '%Y-%m-%d');
 ```
 
-**7. Exploratory Data Analysis**
+**4. Exploratory Data Analysis**
 Exploratory Data Analysis (EDA) is a crucial step in understanding and summarizing the main characteristics of a dataset, often employing visual methods. In the context of the Superstore Sales dataset, EDA involves analyzing sales performance, customer demographics, and product categories to uncover patterns and insights that can drive business decisions.
 
 1. Total Orders
