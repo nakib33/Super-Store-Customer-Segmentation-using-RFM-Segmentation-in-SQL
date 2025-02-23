@@ -120,34 +120,49 @@ After loading the data, ensure that date fields are correctly formatted.
 **7. Exploratory Data Analysis**
 Exploratory Data Analysis (EDA) is a crucial step in understanding and summarizing the main characteristics of a dataset, often employing visual methods. In the context of the Superstore Sales dataset, EDA involves analyzing sales performance, customer demographics, and product categories to uncover patterns and insights that can drive business decisions.
 
-###1. Total Orders
-
+1. Total Orders
 To determine the total number of orders in the Superstore Sales dataset, the following SQL query can be used:
 ```bash
-  SELECT 
-    COUNT(*) AS Total_Orders
-  FROM
-    Superstore_Sales;
+  SELECT COUNT(*) AS Total_Orders
+  FROM Superstore_Sales;
+```
+**Result: 9426**
+NOTE: This query counts all records in the _Superstore_Sales_ table, providing the total number of orders processed. Understanding the volume of orders is fundamental for assessing overall business activity and growth over time.
 
-  SELECT DISTINCT
-    Product_Category
-  FROM
-    Superstore_Sales;
+2. Product Categories
+Identifying the distinct product categories offered by the store is essential for inventory management and marketing strategies. The following SQL query retrieves all unique product categories:
+```bash
+  SELECT DISTINCT Product_Category
+  FROM Superstore_Sales;
+```
+**Result:**
+- **Office Supplies**
+- **Technology**
+- **Furniture**
+NOTE: This query extracts unique values from the _Product_Category_ column, allowing the business to understand its product range and focus on categories that perform well.
 
-  SELECT 
-    Region, COUNT(*) AS Order_Count
-  FROM
-    Superstore_Sales
+3. Orders by Region
+Analyzing order distribution across different regions helps in identifying high-performing areas and regions that may need targeted marketing efforts. The SQL query below groups orders by region:
+```bash
+  SELECT Region, COUNT(*) AS Order_Count
+  FROM Superstore_Sales
   GROUP BY Region;
+```
+**Result:**
 
-  SELECT 
-    Customer_Name, SUM(Sales) AS Total_Sales
-  FROM
-    Superstore_Sales
+This query counts the number of orders in each region, providing insights into regional sales performance. Such information is valuable for regional sales strategies and resource allocation.
+
+4. Top 10 Customers by Sales
+
+Recognizing the top customers contributes to personalized marketing and customer retention strategies. The following query lists the top 10 customers based on total sales:
+```
+  SELECT Customer_Name, SUM(Sales) AS Total_Sales
+  FROM Superstore_Sales
   GROUP BY Customer_Name
   ORDER BY Total_Sales DESC
   LIMIT 10;
 ```
+
 ## RFM Segmentation
 
 **📖 What is RFM?**
