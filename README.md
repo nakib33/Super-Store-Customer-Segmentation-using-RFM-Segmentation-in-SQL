@@ -85,6 +85,7 @@ Load the sales data from a CSV file into the Superstore_Sales table. Ensure the 
     Order_Date = DATE_ADD('1899-12-30', INTERVAL @Order_Date DAY),  -- Convert Excel date
     Ship_Date = DATE_ADD('1899-12-30', INTERVAL @Ship_Date DAY);  -- Convert Excel date
 ```
+Note: The DATE_ADD function adjusts Excel serial dates to MySQL DATE format.
 
 **4. Loading the table: After the data is uploaded to the database system**
 
@@ -100,9 +101,13 @@ Statement: The query SELECT * FROM Superstore_Sales; retrieves all records and c
   SELECT MAX(Order_Date) FROM Superstore_Sales;
   SELECT MIN(Order_Date) FROM Superstore_Sales;
 ```
-
+Result:
+```bash
+  Get the most recent order date: 2013-12-31
+  Get the earliest order date: 2010-01-01
+```
 **6. Data Cleaning**
-
+After loading the data, ensure that date fields are correctly formatted.
 ```bash
   UPDATE Superstore_Sales
   SET order_date = STR_TO_DATE(order_date, '%Y-%m-%d');
@@ -112,7 +117,7 @@ Statement: The query SELECT * FROM Superstore_Sales; retrieves all records and c
 ```
 
 **7. Exploratory Data Analysis**
-
+Exploratory Data Analysis (EDA) is a crucial step in understanding and summarizing the main characteristics of a dataset, often employing visual methods. In the context of the Superstore Sales dataset, EDA involves analyzing sales performance, customer demographics, and product categories to uncover patterns and insights that can drive business decisions.
 ```bash
   SELECT 
     COUNT(*) AS Total_Orders
