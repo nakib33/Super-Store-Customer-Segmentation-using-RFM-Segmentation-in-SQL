@@ -151,7 +151,7 @@ Analyzing order distribution across different regions helps in identifying high-
   GROUP BY Region;
 ```
 **Result:**
-![stafftable](image/1.png)
+![Orders by Region](Image/1.png)
 
 This query counts the number of orders in each region, providing insights into regional sales performance. Such information is valuable for regional sales strategies and resource allocation.
 
