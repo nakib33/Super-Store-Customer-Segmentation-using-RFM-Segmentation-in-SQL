@@ -119,6 +119,10 @@ After loading the data, ensure that date fields are correctly formatted.
 
 **7. Exploratory Data Analysis**
 Exploratory Data Analysis (EDA) is a crucial step in understanding and summarizing the main characteristics of a dataset, often employing visual methods. In the context of the Superstore Sales dataset, EDA involves analyzing sales performance, customer demographics, and product categories to uncover patterns and insights that can drive business decisions.
+
+###1. Total Orders
+
+To determine the total number of orders in the Superstore Sales dataset, the following SQL query can be used:
 ```bash
   SELECT 
     COUNT(*) AS Total_Orders
@@ -192,9 +196,8 @@ RFM (Recency, Frequency, Monetary) segmentation is a method to classify customer
     CONCAT_WS('', R_Score, F_Score, M_Score) AS RFM_Score_Combination
   FROM RFM_SCORE AS R;
 ```
-```
-First, run the full code. This time, it will not display any output because it creates a table in the view section. This table does not save as an extra table; it fully depends on the main table, which is Superstore_Sales, so it does not take up extra space. Now, run this full SQL code again, but ignore the first line; start from the second line, which begins with 'WITH CUSTOMER_AGGREGATED_DATA AS ('.
-```
+NOTE: First, run the full code. This time, it will not display any output because it creates a table in the view section. This table does not save as an extra table; it fully depends on the main table, which is Superstore_Sales, so it does not take up extra space. Now, run this full SQL code again, but ignore the first line; start from the second line, which begins with "WITH CUSTOMER_AGGREGATED_DATA AS (".
+
 
 **1. Define Customer Segments**
 
@@ -213,10 +216,7 @@ First, run the full code. This time, it will not display any output because it c
      END AS Customer_Segment
   FROM RFM_SCORE_DATA;
 ```
-
-```
-First, run the full code. This time, it will not display any output because it creates a table in the view section. This table does not save as an extra table; it fully depends on the main table, which is Superstore_Sales, so it does not take up extra space. Now, run this full SQL code again, but ignore the first line; start from the second line, which begins with 'WITH CUSTOMER_AGGREGATED_DATA AS ('.
-```
+NOTE: First, run the full code. This time, it will not display any output because it creates a table in the view section. This table does not save as an extra table; it fully depends on the main table, which is Superstore_Sales, so it does not take up extra space. Now, run this full SQL code again, but ignore the first line; start from the second line, which begins with 'WITH CUSTOMER_AGGREGATED_DATA AS ('.
 
 ### 📌 Customer Segment Analysis
 
