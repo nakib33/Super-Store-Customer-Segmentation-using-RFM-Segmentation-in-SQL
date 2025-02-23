@@ -4,6 +4,15 @@
 📌 **Project Overview**
 
 This project focuses on **RFM (Recency, Frequency, Monetary)** segmentation for Super Store sales data analysis using **MySQL**. The goal is to analyze customer purchasing behavior, identify high-value customers, and generate insightful business reports to enhance growth strategies.
+
+## 📚Table of Contents
+- [Database and Table Creation](#Database-and-Table-Creation)
+- [Data Loading](#Data-Loading)
+- [Data Cleaning](#Data-Cleaning)
+- [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+- [RFM Customer Segmentation]([#RFM-Customer-Segmentation)
+- [Usage Instructions](#Usage-Instructions)
+
 ## 📊Features & Analysis Included
 
 - Sales Data Storage & Cleaning
